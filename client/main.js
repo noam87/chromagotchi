@@ -1,0 +1,3 @@
+poo = require("./test");
+
+poo();
