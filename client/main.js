@@ -1,4 +1,5 @@
 var render = require("./view/out");
+var input = require("./view/in");
 
 $(document).ready(function() {
   var test = [
@@ -8,4 +9,5 @@ $(document).ready(function() {
   ];
 
   render(test);
+  input();
 });
