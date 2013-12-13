@@ -1,7 +1,35 @@
 ;(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var Model = require("../../model");
+
+module.exports = update;
+function update() {
+  $("#canvas").on("imageUpdated", updateModel);
+
+  function updateModel()  {
+    console.log("updateArray: ", window.updateArray);
+    Model.update(window.updateArray);
+  }
+}
+
+},{"../../model":4}],2:[function(require,module,exports){
+var render = require("../../view/out");
+var Model = require("../../model");
+
+module.exports = function()  {
+  $("#canvas").on("imageUpdated", updateView);
+
+  function updateView() {
+    var img = Model.get();
+    render(img);
+  }
+}
+
+},{"../../model":4,"../../view/out":6}],3:[function(require,module,exports){
 var render = require("./view/out");
 var input = require("./view/in");
 var Model = require("./model");
+var controller = require("./controller/in");
+var out = require("./controller/out");
 
 window.saveImage = Model.set;
 
@@ -10,31 +38,33 @@ $(document).ready(function() {
 
   render(test);
   input();
+  controller();
+  out();
 });
 
-},{"./model":2,"./view/in":3,"./view/out":4}],2:[function(require,module,exports){
+},{"./controller/in":1,"./controller/out":2,"./model":4,"./view/in":5,"./view/out":6}],4:[function(require,module,exports){
 module.exports.set = set;
-function set() {
-  var test = [
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 2  }, { "uni": 3 }, { "uni": 4 }, { "uni": 0  }, { "uni": 0 }, { "uni": 1 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 3  }, { "uni": 0 }, { "uni": 2  }, { "uni": 3 }, { "uni": 0 }, { "uni": 1 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 3  }, { "uni": 3 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 3  }, { "uni": 0 }, { "uni": 1 }, { "uni": 2 }, { "uni": 3  }, { "uni": 2 }, { "uni": 2  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 0 }, { "uni": 1 }, { "uni": 2 }, { "uni": 3  }, { "uni": 2 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }]
+function set(array) {
+  if (!array) var array = [
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 2  }, { "uni": 3 }, { "uni": 4 }, { "uni": 0 }, { "uni": 0 }, { "uni": 1 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 3  }, { "uni": 0 }, { "uni": 2 }, { "uni": 3 }, { "uni": 0 }, { "uni": 1 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 3  }, { "uni": 3 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 3  }, { "uni": 0 }, { "uni": 1 }, { "uni": 2 }, { "uni": 3 }, { "uni": 2 }, { "uni": 2  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 1 }, { "uni": 2 }, { "uni": 3 }, { "uni": 2 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }]
   ];
-  test = JSON.stringify(test);
+  array = JSON.stringify(array);
   
-  localStorage.setItem("chromagotchi", test);
+  localStorage.setItem("chromagotchi", array);
 }
 
 module.exports.get = get;
@@ -44,7 +74,19 @@ function get()  {
   return image;
 }
 
-},{}],3:[function(require,module,exports){
+module.exports.update = update;
+function update(updateArray)  {
+  var array = get();
+  var i = updateArray[0];
+  var j = updateArray[1];
+  var pixel = { uni: updateArray[2] };
+
+  array[i][j] = pixel;
+
+  set(array);
+}
+
+},{}],5:[function(require,module,exports){
 // the view/in module takes a user click event on a unicode block and 
 // returns an array of the form
 //
@@ -58,7 +100,8 @@ function blockToArray()  {
   // for prototyping purposes only:
   if (!window.uni_) window.uni_ = 0;
 
-  $("#canvas").on("click", getArray);
+  var thing  = $("#canvas").on("click", getArray);
+  console.log("thing:", thing);
 }
 
 
@@ -66,13 +109,14 @@ function getArray(e)  {
   var $block = $(e.target);
   var i = $block.parent().index();
   var j = $block.index();
-  var pixel = { uni: window.uni_ };
+  var pixel = $("#uni-select").val();
+  pixel = parseInt(pixel);
 
-  console.log([i, j, pixel]);
-  return [i, j, pixel];
+  window.updateArray = [i, j, pixel];
+  $("#canvas").trigger("imageUpdated");
 }
 
-},{}],4:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 // the view/out module takes input of the form
 //
 //  [ 
@@ -95,7 +139,7 @@ function getArray(e)  {
 
 module.exports = render;
 function render(input) {
-  var unis = ["&#x2588;", "&#x2593;", "&#x2592;", "&#x2591;", " "];
+  var unis = ["&#x2588;", "&#x2593;", "&#x2592;", "&#x2591;", "&nbsp;"];
   var $canvas = $("#canvas");
 
   createRows(input);
@@ -132,5 +176,5 @@ function render(input) {
 
 
 
-},{}]},{},[1])
+},{}]},{},[3])
 ;

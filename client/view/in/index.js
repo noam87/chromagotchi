@@ -11,7 +11,8 @@ function blockToArray()  {
   // for prototyping purposes only:
   if (!window.uni_) window.uni_ = 0;
 
-  $("#canvas").on("click", getArray);
+  var thing  = $("#canvas").on("click", getArray);
+  console.log("thing:", thing);
 }
 
 
@@ -19,8 +20,9 @@ function getArray(e)  {
   var $block = $(e.target);
   var i = $block.parent().index();
   var j = $block.index();
-  var pixel = { uni: window.uni_ };
+  var pixel = $("#uni-select").val();
+  pixel = parseInt(pixel);
 
-  console.log([i, j, pixel]);
-  return [i, j, pixel];
+  window.updateArray = [i, j, pixel];
+  $("#canvas").trigger("imageUpdated");
 }

@@ -20,7 +20,7 @@
 
 module.exports = render;
 function render(input) {
-  var unis = ["&#x2588;", "&#x2593;", "&#x2592;", "&#x2591;", " "];
+  var unis = ["&#x2588;", "&#x2593;", "&#x2592;", "&#x2591;", "&nbsp;"];
   var $canvas = $("#canvas");
 
   createRows(input);
