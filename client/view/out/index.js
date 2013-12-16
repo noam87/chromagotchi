@@ -41,8 +41,10 @@ function render(input) {
 
     function renderPixels(row, index)  {
       row.forEach(function(pixelObj) { 
+        if (pixelObj.color) var color = pixelObj.color;
+        else var color = "black";
         var block = toBlock(pixelObj.uni);
-        var $pixel = $("<span></span>").html(block);
+        var $pixel = $("<span></span>").html(block).attr("style", "color:" + color + ";");
         var $row = $( $canvas.find("div").get(index) );
         $row.append($pixel);
       });

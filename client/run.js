@@ -46,21 +46,21 @@ $(document).ready(function() {
 module.exports.set = set;
 function set(array) {
   if (!array) var array = [
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 2  }, { "uni": 3 }, { "uni": 4 }, { "uni": 0 }, { "uni": 0 }, { "uni": 1 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 3  }, { "uni": 0 }, { "uni": 2 }, { "uni": 3 }, { "uni": 0 }, { "uni": 1 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 3  }, { "uni": 3 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 3  }, { "uni": 0 }, { "uni": 1 }, { "uni": 2 }, { "uni": 3 }, { "uni": 2 }, { "uni": 2  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 0 }, { "uni": 1 }, { "uni": 2 }, { "uni": 3 }, { "uni": 2 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }],
-   [{ "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3 }, { "uni": 0 }, { "uni": 0  }, { "uni": 2 }, { "uni": 1 }, { "uni": 0 }, { "uni": 3  }, { "uni": 0 }]
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 2  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }],
+   [{ "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }, { "uni": 0 }, { "uni": 0 }, { "uni": 0  }, { "uni": 0 }]
   ];
   array = JSON.stringify(array);
   
@@ -79,7 +79,7 @@ function update(updateArray)  {
   var array = get();
   var i = updateArray[0];
   var j = updateArray[1];
-  var pixel = { uni: updateArray[2] };
+  var pixel = { uni: updateArray[2].uni, color: updateArray[2].color };
 
   array[i][j] = pixel;
 
@@ -109,8 +109,10 @@ function getArray(e)  {
   var $block = $(e.target);
   var i = $block.parent().index();
   var j = $block.index();
-  var pixel = $("#uni-select").val();
-  pixel = parseInt(pixel);
+  var pixel = {  };
+  pixel.uni = $("#uni-select").val();
+  pixel.uni = parseInt(pixel.uni);
+  pixel.color = $("#color-select").val();
 
   window.updateArray = [i, j, pixel];
   $("#canvas").trigger("imageUpdated");
@@ -160,8 +162,10 @@ function render(input) {
 
     function renderPixels(row, index)  {
       row.forEach(function(pixelObj) { 
+        if (pixelObj.color) var color = pixelObj.color;
+        else var color = "black";
         var block = toBlock(pixelObj.uni);
-        var $pixel = $("<span></span>").html(block);
+        var $pixel = $("<span></span>").html(block).attr("style", "color:" + color + ";");
         var $row = $( $canvas.find("div").get(index) );
         $row.append($pixel);
       });

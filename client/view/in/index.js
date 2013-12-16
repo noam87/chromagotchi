@@ -20,8 +20,10 @@ function getArray(e)  {
   var $block = $(e.target);
   var i = $block.parent().index();
   var j = $block.index();
-  var pixel = $("#uni-select").val();
-  pixel = parseInt(pixel);
+  var pixel = {  };
+  pixel.uni = $("#uni-select").val();
+  pixel.uni = parseInt(pixel.uni);
+  pixel.color = $("#color-select").val();
 
   window.updateArray = [i, j, pixel];
   $("#canvas").trigger("imageUpdated");
